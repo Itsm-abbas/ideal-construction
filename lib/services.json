@@ -1,0 +1,87 @@
+[
+    {
+      "slug": "project-management",
+      "title": "Project Management & Consultancy",
+      "icon": "Building2",
+      "description": "Seamless execution from start to finish, guided by professionalism, transparency, and Islamic values.",
+      "longDescription": "Our project management services ensure your construction project runs smoothly from conception to completion. We handle all aspects including planning, budgeting, scheduling, and quality control while maintaining the highest Islamic ethical standards. With our consultancy, you'll receive expert guidance at every decision point.",
+      "faithNote": "“Verily, Allah loves that when anyone of you does a job, he should perfect it.” (Bayhaqi)",
+      "features": [
+        "Comprehensive project planning",
+        "Budget optimization",
+        "Vendor management",
+        "Quality assurance",
+        "Timely delivery"
+      ],
+      "image" :"/projects/2.jpg"
+    },
+
+    {
+      "slug": "residential-construction",
+      "title": "Residential Construction",
+      "icon": "Home",
+      "description": "From foundations to finishing, we build homes with sincerity and verified material quality — as if we're building for our own families.",
+      "longDescription": "We construct homes that embody comfort, quality, and Islamic values. Using only certified materials and ethical labor practices, we ensure your home is built to last while maintaining barakah in every brick. Our process includes regular updates and complete transparency.",
+      "faithNote": "A home built on trust is a blessing in both worlds.",
+      "features": [
+        "Turnkey solutions",
+        "Material quality guarantee",
+        "Custom design options",
+        "Energy efficient solutions",
+        "5-year structural warranty"
+      ],
+      "image" :"/projects/1.jpg"
+
+    },
+    {
+      "slug": "architectural-design",
+      "title": "Architectural & 3D Design",
+      "icon": "Layout",
+      "description": "Visualize before you build — elegant, accurate, and purposeful designs by certified Muslim architects.",
+      "longDescription": "Our architectural services combine modern design principles with Islamic architectural heritage. We provide complete 3D renderings, structural plans, and interior design concepts that reflect your personality while maintaining functionality and Islamic values in space utilization.",
+      "faithNote": "Clarity in vision leads to barakah in execution.",
+      "features": [
+        "3D walkthroughs",
+        "Structural engineering",
+        "Space optimization",
+        "Permit assistance",
+        "Sustainable design"
+      ],
+      "image" :"/projects/3.jpg"
+
+    },
+    {
+      "slug": "renovation-remodeling",
+      "title": "Renovation & Remodeling",
+      "icon": "RefreshCcw",
+      "description": "Give your property a new life with modern upgrades, durable finishes, and peaceful aesthetics.",
+      "longDescription": "Transform your existing space with our renovation services that respect your home's character while introducing modern functionality. We specialize in Islamic home design elements like proper privacy considerations, prayer spaces, and wudu-friendly bathrooms.",
+      "faithNote": "Beautify your space — for indeed, Allah is Beautiful and loves beauty. (Muslim)",
+      "features": [
+        "Space reconfiguration",
+        "Quality material upgrades",
+        "Islamic design elements",
+        "Minimal disruption",
+        "Warranty on all work"
+      ],
+      "image" :"/projects/4.jpg"
+
+    },
+    {
+      "slug": "investor-partnership",
+      "title": "Investor Partnership Program",
+      "icon": "Handshake",
+      "description": "Invest, build, and share profits (60/40) with full project handling — all rooted in Shariah principles of fairness and risk-sharing.",
+      "longDescription": "Our investor program offers a Shariah-compliant way to participate in profitable real estate development. We handle all aspects of the project while you share in the profits. Complete transparency, regular updates, and fair risk distribution make this a halal investment opportunity.",
+      "faithNote": "A halal partnership brings rizq, trust, and multiplied reward.",
+      "features": [
+        "Shariah-compliant structure",
+        "60/40 profit sharing",
+        "Full project management",
+        "Regular financial reports",
+        "Exit options available"
+      ],
+      "image" :"/projects/7.jpg"
+
+    }
+  ]

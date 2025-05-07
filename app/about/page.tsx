@@ -141,8 +141,9 @@ export default function AboutPage() {
               <p className="text-lg text-gray-600 mb-6">
                 Founded in 2010 with just three employees, Ideal Construction
                 began as a small renovation company in Islamabad. Through
-                dedication to quality and customer satisfaction, we've grown
-                into one of Pakistan's most trusted construction firms.
+                dedication to quality and customer satisfaction, we&apos;ve
+                grown into one of Pakistan&apos;s most trusted construction
+                firms.
               </p>
               <p className="text-lg text-gray-600 mb-6">
                 Our journey reflects our core values: integrity, innovation, and
@@ -152,8 +153,8 @@ export default function AboutPage() {
               </p>
               <div className="bg-blue-50 p-6 rounded-lg border-l-4 border-blue-500">
                 <p className="italic text-gray-700">
-                  "We don't just construct buildings - we create spaces where
-                  lives unfold and memories are made."
+                  &quot;We don&apos;t just construct buildings - we create
+                  spaces where lives unfold and memories are made.&quot;
                 </p>
                 <p className="font-medium mt-2">- Ahmed Khan, Founder</p>
               </div>

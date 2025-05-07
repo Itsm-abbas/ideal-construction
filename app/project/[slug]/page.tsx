@@ -12,11 +12,11 @@ import {
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
 import Link from "next/link";
-import { useParams } from "next/navigation";
+// import { useParams } from "next/navigation";
 import { montserrat } from "@lib/font";
 
 export default function ProjectDetail() {
-  const { slug } = useParams();
+  // const { slug } = useParams();
   const project = {
     title: "Modern Luxury Villa - The Horizon Residence",
     slug: "horizon-residence",
