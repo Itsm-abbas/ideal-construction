@@ -1,0 +1,87 @@
+"use client";
+
+import { useState, useEffect } from "react";
+import { motion } from "framer-motion";
+import { Typewriter } from "react-simple-typewriter";
+import { montserrat, playfair } from "@lib/font";
+
+const backgroundImages = [
+  "/projects/13.png",
+  "/projects/11.jpg",
+  "/projects/10.jpg",
+  "/projects/9.jpg",
+  "/projects/8.jpg",
+  "/projects/7.jpg",
+  "/projects/6.png",
+  "/projects/5.jpg",
+  "/projects/4.jpg",
+  "/projects/3.jpg",
+  "/projects/2.jpg",
+];
+
+export default function Hero() {
+  const [index, setIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setIndex((prev) => (prev + 1) % backgroundImages.length);
+    }, 10000);
+
+    return () => clearInterval(interval);
+  }, []);
+
+  return (
+    <div className="relative h-screen w-full overflow-hidden">
+      {/* Background Images */}
+      {backgroundImages.map((img, i) => (
+        <motion.div
+          key={i}
+          className="absolute inset-0 bg-cover bg-center transition-opacity duration-[3000ms]"
+          style={{
+            backgroundImage: `url(${img})`,
+            opacity: i === index ? 1 : 0,
+            zIndex: i === index ? 1 : 0,
+            transition: "opacity 3s ease-in-out, transform 6s ease-in-out",
+            transform: i === index ? "scale(1)" : "scale(1.1)",
+          }}
+        />
+      ))}
+
+      {/* Black overlay for general text readability */}
+      <div className=" absolute inset-0 bg-black/40 z-10" />
+
+      {/* NEW: Top gradient for navbar visibility */}
+      <div className=" absolute top-0 left-0 w-full h-40 bg-gradient-to-b from-black/70 to-transparent z-20" />
+
+      {/* Hero Text Content */}
+      <div className="relative z-30 flex flex-col justify-center items-center h-full text-center px-4 text-white">
+        <h1
+          className={`text-3xl md:text-6xl mb-4 ${montserrat.className}`}
+          style={{ color: "var(--color-accent)" }}
+        >
+          We Build With{" "}
+          <span style={{ color: "white" }}>
+            <Typewriter
+              words={["Ihsan", "Trust", "Excellence"]}
+              loop
+              cursor
+              cursorStyle="|"
+              typeSpeed={100}
+              deleteSpeed={40}
+              delaySpeed={2000}
+            />
+          </span>
+        </h1>
+
+        <p
+          className={`max-w-3xl text-lg md:text-xl italic ${playfair.className}`}
+          style={{ color: "var(--color-lightgray)" }}
+        >
+          “With the will of Allah, we build with Ihsan — crafting spaces with
+          sincerity, trust, and excellence, knowing that every structure we
+          create is a responsibility before Him and a service to humanity.”
+        </p>
+      </div>
+    </div>
+  );
+}
