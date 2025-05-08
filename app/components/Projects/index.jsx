@@ -1,7 +1,8 @@
 // components/OurProjects.tsx
 "use client";
 
-import { m as motion } from "framer-motion";
+import { motion } from "motion/react";
+
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
 import Image from "next/image";

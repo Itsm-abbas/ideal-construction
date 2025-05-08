@@ -2,7 +2,8 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import { m as motion } from "framer-motion";
+import { motion } from "motion/react";
+
 import { Menu, X } from "lucide-react";
 import { poppins } from "@lib/font";
 

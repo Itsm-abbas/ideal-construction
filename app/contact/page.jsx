@@ -1,5 +1,5 @@
 "use client";
-import { m as motion } from "framer-motion";
+import { motion } from "motion/react";
 
 import { FiMapPin, FiPhone, FiMail, FiClock } from "react-icons/fi";
 import ContactForm from "@components/ContactForm"; // Make sure this file exists

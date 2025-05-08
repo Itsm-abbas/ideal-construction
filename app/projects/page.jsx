@@ -1,7 +1,7 @@
 "use client";
 import Link from "next/link";
 import Image from "next/image";
-import { m as motion } from "framer-motion";
+import { motion } from "motion/react";
 
 import { useState } from "react";
 import Navbar from "@components/Navbar";

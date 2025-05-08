@@ -1,6 +1,6 @@
 "use client";
 import { playfair } from "@lib/font";
-import { m as motion } from "framer-motion";
+import { motion } from "motion/react";
 
 import Link from "next/link";
 import { FaEnvelope, FaPhoneAlt } from "react-icons/fa";

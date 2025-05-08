@@ -1,7 +1,8 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { m as motion } from "framer-motion";
+import { motion } from "motion/react";
+
 import { Typewriter } from "react-simple-typewriter";
 import { montserrat, playfair } from "@lib/font";
 

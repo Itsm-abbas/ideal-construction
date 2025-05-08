@@ -1,5 +1,6 @@
 "use client";
-import { m as motion } from "framer-motion";
+import { motion } from "motion/react";
+
 import Image from "next/image";
 
 import { Montserrat, Playfair_Display } from "next/font/google";

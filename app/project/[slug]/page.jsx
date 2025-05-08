@@ -1,6 +1,6 @@
 // app/project/[slug]/page.jsx
 "use client";
-import { m as motion } from "framer-motion";
+import { motion } from "motion/react";
 
 import Image from "next/image";
 import {
