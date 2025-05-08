@@ -2,30 +2,12 @@
 import Link from "next/link";
 import Image from "next/image";
 import { motion } from "motion/react";
-
-import { useState } from "react";
+import projects from "@lib/projects";
 import Navbar from "@components/Navbar";
 import Title from "@components/TitleWF";
+import { montserrat } from "@lib/font";
 
-export default function projects() {
-  const [projects, setProjects] = useState([
-    {
-      slug: "modern-10-marla",
-      title: "Modern 10 Marla House",
-      image: "/projects/3.jpg",
-      location: "Islamabad",
-      size: "10 Marla",
-      status: "Completed",
-    },
-    {
-      slug: "smart-7-marla",
-      title: "7 Marla Smart Home",
-      image: "/projects/2.jpg",
-      location: "G-13, Islamabad",
-      size: "7 Marla",
-      status: "Under Construction",
-    },
-  ]);
+export default function Projects() {
   return (
     <>
       <Navbar />
@@ -54,35 +36,49 @@ export default function projects() {
 
         {/* Projects Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
-          {projects?.map((project, idx) => (
-            <motion.div
-              key={project.slug}
-              className="relative group overflow-hidden rounded-xl shadow-xl cursor-pointer"
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: idx * 0.1 }}
-            >
-              <Link href={`/projects/${project.slug}`}>
+          {projects.map((project, idx) => (
+            <Link href={`/project/${project.slug}`} key={idx}>
+              <div className="relative group overflow-hidden rounded-xl shadow-lg cursor-pointer h-[400px]">
+                {/* Static Image */}
                 <Image
-                  src={project.image}
+                  src={project.images[0]}
                   alt={project.title}
                   width={600}
                   height={400}
-                  className="w-full h-[300px] object-cover group-hover:scale-105 transition-transform duration-300"
+                  className="w-full h-full object-cover"
                 />
 
-                {/* Hover overlay */}
-                <div className="absolute bottom-0 left-0 w-full h-full bg-gradient-to-t from-black/70 to-transparent text-white p-6 flex flex-col justify-end opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <h2 className="text-xl font-semibold mb-2">
-                    {project.title}
-                  </h2>
-                  <p className="text-sm">
-                    📍 {project.location} | 📐 {project.size} | 🚧{" "}
-                    {project.status}
-                  </p>
+                {/* Overlay Container */}
+                <div className="absolute inset-0 overflow-hidden">
+                  {/* Dark Overlay - Appears on hover */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+
+                  {/* Content Container - Slides up from bottom */}
+                  <div className="absolute bottom-0 left-0 right-0 p-6 translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-[cubic-bezier(0.33,1,0.68,1)]">
+                    <motion.h3
+                      initial={{ opacity: 0, x: -200 }} // Starts off-screen to the left
+                      whileInView={{
+                        opacity: 1,
+                        x: 0, // Ends at the normal position
+                        transition: {
+                          delay: 0.25,
+                          duration: 0.4,
+                        },
+                      }}
+                      className={`text-2xl ${montserrat.className}  font-medium mb-2`}
+                    >
+                      {project.title}
+                    </motion.h3>
+                    <p className="text-sm text-gray-200 mb-4">
+                      {project.description}
+                    </p>
+                    <button className="px-4 py-2 bg-[var(--color-primary2)] cursor-pointer text-white text-sm rounded hover:bg-opacity-90 transition-colors">
+                      View Details
+                    </button>
+                  </div>
                 </div>
-              </Link>
-            </motion.div>
+              </div>
+            </Link>
           ))}
         </div>
       </div>

@@ -2,7 +2,7 @@
 "use client";
 
 import { motion } from "motion/react";
-
+import projects from "@lib/projects";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
 import Image from "next/image";
@@ -14,51 +14,6 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import { useRef } from "react";
-
-const projects = [
-  {
-    title: "7 Marla Smart Home",
-    slug: "smart-7-marla",
-    image: "/projects/2.jpg",
-    description:
-      "Smart living with efficient design, tech-enabled spaces & shariah-compliant planning.",
-  },
-  {
-    title: "Renovation Project – F-11",
-    slug: "renovation-f11",
-    image: "/projects/3.jpg",
-    description:
-      "Complete remodeling with material verification and transparency in costing.",
-  },
-  {
-    title: "Renovation Project – F-11",
-    slug: "renovation-f11",
-    image: "/projects/4.jpg",
-    description:
-      "Complete remodeling with material verification and transparency in costing.",
-  },
-  {
-    title: "Renovation Project – F-11",
-    slug: "renovation-f11",
-    image: "/projects/5.jpg",
-    description:
-      "Complete remodeling with material verification and transparency in costing.",
-  },
-  {
-    title: "Renovation Project – F-11",
-    slug: "renovation-f11",
-    image: "/projects/6.png",
-    description:
-      "Complete remodeling with material verification and transparency in costing.",
-  },
-  {
-    title: "Renovation Project – F-11",
-    slug: "renovation-f11",
-    image: "/projects/7.jpg",
-    description:
-      "Complete remodeling with material verification and transparency in costing.",
-  },
-];
 
 export default function OurProjects() {
   const swiperRef = useRef(null);
@@ -125,11 +80,11 @@ export default function OurProjects() {
         >
           {projects.map((project, idx) => (
             <SwiperSlide key={idx}>
-              <Link href={`/projects/${project.slug}`}>
+              <Link href={`/project/${project.slug}`}>
                 <div className="relative group overflow-hidden rounded-xl shadow-lg cursor-pointer h-[400px]">
                   {/* Static Image */}
                   <Image
-                    src={project.image}
+                    src={project.images[0]}
                     alt={project.title}
                     width={600}
                     height={400}

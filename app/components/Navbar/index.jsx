@@ -32,8 +32,10 @@ export default function Navbar({ home }) {
   return (
     <nav
       className={`w-full fixed top-0 z-50 transition-all duration-300 shadow-lg ${
-        scrolled && home && "md:bg-white/95 backdrop-blur-md md:shadow-sm"
-      } ${!home && " bg-white"} `}
+        isOpen ? "bg-white" : ""
+      } ${
+        scrolled && home && "md:bg-white/95 md:backdrop-blur-md md:shadow-sm"
+      } ${!home && " md:bg-white"} `}
     >
       <div
         className={`max-w-7xl mx-auto px-4 sm:px-6 py-4 flex justify-between items-center ${

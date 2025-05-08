@@ -42,7 +42,7 @@ const Footer = () => {
           {/* Branding Column */}
           <motion.div variants={itemVariants}>
             <h3 className={`text-2xl font-bold mb-4 ${playfair.className}`}>
-              <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-700 to-teal-600">
+              <span className="bg-clip-text text-transparent bg-gradient-to-r from-[var(--color-primary2)] to-[var(--color-primary1)]">
                 Ideal contruction
               </span>
             </h3>

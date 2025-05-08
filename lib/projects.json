@@ -1,0 +1,91 @@
+[
+    {
+      "slug": "modern-10-marla",
+      "title": "Modern 10 Marla House",
+      "description": "A contemporary 10 Marla home featuring minimalistic design, open-plan living spaces, and energy-efficient systems. Designed for urban comfort with smart home integration and premium materials.",
+      "location": "Islamabad",
+      "images": ["/projects/2.jpg"],
+      "duration": "6 months",
+      "size": "10 Marla",
+      "budget": "PKR 1.8 Crore",
+      "design": "Contemporary",
+      "features": ["Smart lighting", "Open kitchen", "Home automation", "Landscaped garden"],
+      "premiumMaterials": ["Imported tiles", "Solid wood doors", "Double-glazed windows"],
+      "challengesOvercome": "Tight urban space required custom foundation work and smart space planning."
+    },
+    {
+      "slug": "luxury-1-kanal",
+      "title": "Luxury 1 Kanal Villa",
+      "description": "A luxury villa project designed with elegance, featuring 5 spacious bedrooms, a pool, and a private cinema. Focused on privacy, functionality, and long-term durability.",
+      "location": "Lahore",
+      "images": ["/projects/3.jpg"],
+      
+      "duration": "9 months",
+      "size": "1 Kanal",
+      "budget": "PKR 3.5 Crore",
+      "design": "Modern Mediterranean",
+      "features": ["Swimming pool", "Home theater", "Walk-in closets", "Smart security system"],
+      "premiumMaterials": ["Italian marble", "Custom cabinetry", "High-end fixtures"],
+      "challengesOvercome": "Managed labor shortages and custom design changes during execution."
+    },
+    {
+      "slug": "eco-5-marla",
+      "title": "Eco-Friendly 5 Marla Home",
+      "description": "An affordable 5 Marla home built with sustainable materials and solar power integration. Designed to reduce energy consumption while offering modern aesthetics.",
+      "location": "Rawalpindi",
+      "images": ["/projects/4.jpg"],
+
+      "duration": "4 months",
+      "size": "5 Marla",
+      "budget": "PKR 65 Lac",
+      "design": "Minimalist Eco-Design",
+      "features": ["Rainwater harvesting", "Solar panels", "Natural ventilation"],
+      "premiumMaterials": ["Recycled bricks", "Energy-efficient glass", "Non-toxic paint"],
+      "challengesOvercome": "Local material sourcing delays due to sustainability criteria."
+    },
+    {
+      "slug": "smart-7-marla",
+      "title": "Smart 7 Marla Home",
+      "description": "Smart home equipped with voice control, CCTV integration, and climate control. Blends traditional architecture with new-age automation for a tech-savvy lifestyle.",
+      "location": "Peshawar",
+      "images": ["/projects/5.jpg"],
+
+      "duration": "5 months",
+      "size": "7 Marla",
+      "budget": "PKR 1.2 Crore",
+      "design": "Fusion of Modern and Traditional",
+      "features": ["Voice-controlled lighting", "Automated gate", "Smart HVAC system"],
+      "premiumMaterials": ["Hardwood floors", "Quartz countertops", "Weatherproof exterior"],
+      "challengesOvercome": "Integrated smart systems within traditional layout without compromising design."
+    },
+    {
+      "slug": "urban-commercial-plaza",
+      "title": "Urban Commercial Plaza",
+      "description": "Three-story commercial plaza with modern façade, efficient office layouts, and energy-saving infrastructure. Designed to accommodate retail and business spaces in a high-traffic urban area.",
+      "location": "Karachi",
+      "images": ["/projects/6.png"],
+
+      "duration": "8 months",
+      "size": "3 Floors",
+      "budget": "PKR 5 Crore",
+      "design": "Corporate Modern",
+      "features": ["Elevator", "Fire safety systems", "Energy-efficient lighting"],
+      "premiumMaterials": ["Steel-reinforced concrete", "Glass curtain walls", "Granite flooring"],
+      "challengesOvercome": "Navigated strict city regulations and utility coordination in dense zone."
+    },
+    {
+      "slug": "apartment-complex-isb",
+      "title": "Modern Apartment Complex",
+      "description": "A multi-unit apartment complex offering premium lifestyle features like a rooftop garden, gym, and underground parking. Focused on community living and smart utility planning.",
+      "location": "Islamabad",
+      "images": ["/projects/7.jpg"],
+      "duration": "12 months",
+      "size": "Multiple Units",
+      "budget": "PKR 12 Crore",
+      "design": "Urban Residential",
+      "features": ["Rooftop garden", "Community gym", "24/7 security"],
+      "premiumMaterials": ["Precast concrete", "Anti-slip tiles", "Fire-rated doors"],
+      "challengesOvercome": "Managing large workforce and supply chain issues post-COVID."
+    }
+  ]
+  
