@@ -16,13 +16,6 @@ import { useRef } from "react";
 
 const projects = [
   {
-    title: "Modern 10 Marla House",
-    slug: "modern-10-marla",
-    image: "/projects/1.jpg",
-    description:
-      "Islamabad-based residential project with premium materials & elegant front elevation.",
-  },
-  {
     title: "7 Marla Smart Home",
     slug: "smart-7-marla",
     image: "/projects/2.jpg",
@@ -61,20 +54,6 @@ const projects = [
     title: "Renovation Project – F-11",
     slug: "renovation-f11",
     image: "/projects/7.jpg",
-    description:
-      "Complete remodeling with material verification and transparency in costing.",
-  },
-  {
-    title: "Renovation Project – F-11",
-    slug: "renovation-f11",
-    image: "/projects/8.jpg",
-    description:
-      "Complete remodeling with material verification and transparency in costing.",
-  },
-  {
-    title: "Renovation Project – F-11",
-    slug: "renovation-f11",
-    image: "/projects/9.jpg",
     description:
       "Complete remodeling with material verification and transparency in costing.",
   },
