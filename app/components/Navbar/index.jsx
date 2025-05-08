@@ -11,15 +11,11 @@ const navLinks = [
   { name: "Services", href: "/services" },
   { name: "Projects", href: "/projects" },
   { name: "Blogs", href: "/blogs" },
-  { name: "About Us", href: "/about" },
+  { name: "About", href: "/about" },
   { name: "Contact", href: "/contact" },
 ];
 
-interface NavbarProps {
-  home?: boolean;
-}
-
-export default function Navbar({ home }: NavbarProps) {
+export default function Navbar({ home }) {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const whatsappLink = `https://wa.me/923209840974?text=Hello%2C%20I%20want%20a%20quote%20for%20construction%20work`;

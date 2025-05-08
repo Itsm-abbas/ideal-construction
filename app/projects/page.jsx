@@ -4,8 +4,7 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { useState } from "react";
 import Navbar from "@components/Navbar";
-import Title from "@components/Title";
-import Subtitle from "@components/Subtitle";
+import Title from "@components/TitleWF";
 
 export default function projects() {
   const [projects, setProjects] = useState([
@@ -30,7 +29,7 @@ export default function projects() {
     <>
       <Navbar />
       <div className="px-6 md:px-24 py-36 bg-[#fdfdfd] text-[#222]">
-        <Title title="Our Projects" underline classes="" />
+        <Title title="Our Projects" underline />
         {/* <Subtitle subtitle="Explore our diverse range of projects, from modern homes to commercial spaces." /> */}
 
         {/* Filter Buttons */}

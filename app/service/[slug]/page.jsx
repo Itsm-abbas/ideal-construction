@@ -9,11 +9,7 @@ export async function generateStaticParams() {
   }));
 }
 
-export default async function ServiceDetail({
-  params,
-}: {
-  params: { slug: string };
-}) {
+export default function ServiceDetailPage({ params }) {
   const service = servicesData.find((service) => service.slug === params.slug);
 
   if (!service) {
