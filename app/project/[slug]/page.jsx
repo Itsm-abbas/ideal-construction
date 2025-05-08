@@ -34,7 +34,7 @@ export default function ProjectDetail() {
 
         <div className="relative h-[70vh] min-h-[500px] w-full overflow-hidden">
           {/* Black overlay for general text readability */}
-          <div className=" absolute inset-0 bg-black/10 z-10" />
+          <div className=" absolute inset-0 bg-black/10 " />
 
           {/* NEW: Top gradient for navbar visibility */}
           <div className=" absolute top-0 left-0 w-full h-40 bg-gradient-to-b from-black/80 to-transparent z-20" />

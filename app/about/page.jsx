@@ -106,7 +106,7 @@ const AboutPage = () => {
                 alt="Sanood Anwar"
                 height={500}
                 width={850}
-                className="object-cover grayscale hover:grayscale-0 transition-all duration-700"
+                className="object-cover transition-all duration-700"
                 priority
               />
               <div className="absolute inset-0 bg-gradient-to-t from-gray-900/40 via-transparent to-transparent" />
@@ -342,9 +342,8 @@ const AboutPage = () => {
               whileTap={{ scale: 0.98 }}
               className="inline-block"
             >
-              <button className="relative overflow-hidden group bg-gradient-to-r from-blue-600 to-teal-500 text-white font-medium py-4 px-8 rounded-full shadow-lg hover:shadow-xl transition-all duration-300">
+              <button className="bg-[var(--color-primary2)] px-5 py-3 rounded-sm text-white">
                 <span className="relative z-10">Get In Touch</span>
-                <span className="absolute inset-0 bg-gradient-to-r from-blue-700 to-teal-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               </button>
             </motion.div>
           </motion.div>

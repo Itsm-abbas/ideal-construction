@@ -16,7 +16,7 @@ const BlogsPage = () => {
         {/* Blog Posts Grid */}
         <Title title="Our Blogs" underline />
         <section className="py-20">
-          <div className="container mx-auto px-6">
+          <div className="container mx-auto md:px-6">
             <MotionWrapper
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}

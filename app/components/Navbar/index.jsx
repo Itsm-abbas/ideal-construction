@@ -2,8 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import { motion } from "motion/react";
-
+import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import { poppins } from "@lib/font";
 
@@ -29,23 +28,37 @@ export default function Navbar({ home }) {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  // Lock body scroll when menu is open
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
+  }, [isOpen]);
+
   return (
     <nav
-      className={`w-full fixed top-0 z-50 transition-all duration-300 shadow-lg ${
+      className={`w-full fixed top-0 z-50 transition-all duration-300 ${
         isOpen ? "bg-white" : ""
       } ${
-        scrolled && home && "md:bg-white/95 md:backdrop-blur-md md:shadow-sm"
-      } ${!home && " md:bg-white"} `}
+        scrolled
+          ? "bg-white/95 backdrop-blur-md shadow-sm text-black"
+          : home
+          ? "text-white"
+          : "text-black"
+      }`}
     >
-      <div
-        className={`max-w-7xl mx-auto px-4 sm:px-6 py-4 flex justify-between items-center ${
-          home == false && "text-black "
-        } ${home && scrolled && "text-black"}  
-        ${home && !scrolled && "text-white"}`}
-      >
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 py-4 flex justify-between items-center">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2">
-          <img src="/logo2.png" alt="logo" className="w-14 md:w-16" />
+          <motion.img
+            src="/logo2.png"
+            alt="logo"
+            className="w-12 md:w-16"
+            whileHover={{ scale: 1.05 }}
+            transition={{ type: "spring", stiffness: 400 }}
+          />
         </Link>
 
         {/* Desktop Navigation */}
@@ -53,16 +66,14 @@ export default function Navbar({ home }) {
           {navLinks.map((link, idx) => (
             <Link href={link.href} key={idx} className="relative group">
               <span
-                className={`${poppins.className}  transition-colors duration-200 `}
+                className={`${poppins.className} transition-colors duration-200`}
               >
                 {link.name}
               </span>
-              {/* Animated underline */}
               <span className="absolute left-0 -bottom-1 w-0 h-0.5 bg-[var(--color-accent)] group-hover:w-full transition-all duration-300 ease-out"></span>
             </Link>
           ))}
 
-          {/* CTA Button */}
           <motion.a
             href={whatsappLink}
             target="_blank"
@@ -78,63 +89,114 @@ export default function Navbar({ home }) {
         </div>
 
         {/* Mobile Menu Toggle */}
-        <button
+        <motion.button
           className="md:hidden p-2 rounded-lg focus:outline-none"
           onClick={() => setIsOpen(!isOpen)}
+          whileTap={{ scale: 0.9 }}
         >
           {isOpen ? (
-            <X
-              size={28}
-              className={scrolled ? "text-gray-800" : "text-white"}
-            />
+            <X size={28} className="text-gray-800" />
           ) : (
             <Menu
               size={28}
               className={scrolled ? "text-gray-800" : "text-white"}
             />
           )}
-        </button>
+        </motion.button>
 
-        {/* Mobile Dropdown */}
-        {isOpen && (
-          <motion.div
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
-            transition={{ duration: 0.2 }}
-            className="md:hidden absolute top-full left-0 right-0 bg-white shadow-lg px-6 py-4 space-y-4"
-          >
-            {navLinks.map((link, idx) => (
-              <Link
-                key={idx}
-                href={link.href}
+        {/* Mobile Menu Overlay */}
+        <AnimatePresence>
+          {isOpen && (
+            <>
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.2 }}
+                className="fixed inset-0 bg-black/50 backdrop-blur-sm z-40"
                 onClick={() => setIsOpen(false)}
-                className="block py-3 px-4 text-gray-800 font-medium hover:bg-gray-50 rounded-lg transition-colors duration-200 border-b border-gray-100"
+              />
+
+              <motion.div
+                initial={{ x: "100%" }}
+                animate={{ x: 0 }}
+                exit={{ x: "100%" }}
+                transition={{ type: "spring", damping: 25, stiffness: 300 }}
+                className="fixed top-0 right-0 h-screen w-80 bg-white shadow-2xl z-50 overflow-y-auto"
               >
-                {link.name}
-              </Link>
-            ))}
-            <a
-              href={whatsappLink}
-              target="_blank"
-              className="block text-center py-3 px-4 rounded-lg font-medium text-white bg-[var(--color-primary2)] hover:bg-[#125e53] transition-colors duration-200"
-            >
-              Get a Quote
-            </a>
-            <div className="text-center text-sm text-gray-600 pt-2">
-              <span>
-                📊 <strong>New:</strong>{" "}
-                <Link
-                  href="/investor-program"
-                  className="text-[var(--color-primary2)] hover:underline"
-                  onClick={() => setIsOpen(false)}
-                >
-                  Investor Partnership Program
-                </Link>
-              </span>
-            </div>
-          </motion.div>
-        )}
+                <div className="p-6">
+                  {/* Close Button */}
+                  <div className="flex justify-end mb-8">
+                    <motion.button
+                      onClick={() => setIsOpen(false)}
+                      whileHover={{ rotate: 90 }}
+                      className="p-2 rounded-full bg-gray-100"
+                    >
+                      <X size={24} className="text-gray-800" />
+                    </motion.button>
+                  </div>
+
+                  {/* Navigation Links */}
+                  <motion.ul className="space-y-2">
+                    {navLinks.map((link, idx) => (
+                      <motion.li
+                        key={idx}
+                        initial={{ x: 20, opacity: 0 }}
+                        animate={{ x: 0, opacity: 1 }}
+                        transition={{ delay: 0.1 * idx }}
+                      >
+                        <Link
+                          href={link.href}
+                          onClick={() => setIsOpen(false)}
+                          className="block py-4 px-4 text-gray-800 font-medium hover:bg-gray-50 rounded-lg transition-colors duration-200"
+                        >
+                          <motion.div whileHover={{ x: 5 }}>
+                            {link.name}
+                          </motion.div>
+                        </Link>
+                      </motion.li>
+                    ))}
+                  </motion.ul>
+
+                  {/* CTA Button */}
+                  <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.6 }}
+                    className="mt-8"
+                  >
+                    <a
+                      href={whatsappLink}
+                      target="_blank"
+                      className="block text-center py-4 px-6 rounded-lg font-bold text-white bg-gradient-to-r from-[var(--color-primary2)] to-[var(--color-primary1)] hover:shadow-lg transition-all duration-300"
+                    >
+                      Get a Quote
+                    </a>
+                  </motion.div>
+
+                  {/* Investor Program */}
+                  <motion.div
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ delay: 0.7 }}
+                    className="mt-6 p-4 bg-blue-50 rounded-lg"
+                  >
+                    <p className="text-sm text-gray-700">
+                      <span className="font-bold">New:</span>{" "}
+                      <Link
+                        href="/investor-program"
+                        onClick={() => setIsOpen(false)}
+                        className="text-[var(--color-primary2)] hover:underline font-medium"
+                      >
+                        Investor Partnership Program
+                      </Link>
+                    </p>
+                  </motion.div>
+                </div>
+              </motion.div>
+            </>
+          )}
+        </AnimatePresence>
       </div>
     </nav>
   );

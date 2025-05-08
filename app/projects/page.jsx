@@ -16,7 +16,7 @@ export default function Projects() {
         {/* <Subtitle subtitle="Explore our diverse range of projects, from modern homes to commercial spaces." /> */}
 
         {/* Filter Buttons */}
-        <div className="flex justify-center mb-10 space-x-4 mt-20">
+        {/* <div className="flex justify-center mb-10 space-x-4 mt-20">
           <button className="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition duration-300">
             All Projects
           </button>
@@ -32,10 +32,10 @@ export default function Projects() {
           <button className="bg-gray-200 text-gray-800 px-4 py-2 rounded-lg hover:bg-gray-300 transition duration-300">
             Commercial Projects
           </button>
-        </div>
+        </div> */}
 
         {/* Projects Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 py-20">
           {projects.map((project, idx) => (
             <Link href={`/project/${project.slug}`} key={idx}>
               <div className="relative group overflow-hidden rounded-xl shadow-lg cursor-pointer h-[400px]">
