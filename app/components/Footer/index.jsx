@@ -1,16 +1,9 @@
 "use client";
 import { playfair } from "@lib/font";
-import { motion } from "framer-motion";
+import { m as motion } from "framer-motion";
+
 import Link from "next/link";
-import {
-  FaLinkedin,
-  FaTwitter,
-  FaGithub,
-  FaEnvelope,
-  FaPhone,
-  FaPhoneSlash,
-  FaPhoneAlt,
-} from "react-icons/fa";
+import { FaEnvelope, FaPhoneAlt } from "react-icons/fa";
 
 const Footer = () => {
   const containerVariants = {

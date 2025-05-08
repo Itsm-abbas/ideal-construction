@@ -2,7 +2,8 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { motion } from "framer-motion";
+import { m as motion } from "framer-motion";
+
 import { ArrowUp } from "lucide-react";
 
 export default function ScrollToTop() {

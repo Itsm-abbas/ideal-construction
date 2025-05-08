@@ -1,6 +1,7 @@
 // app/project/[slug]/page.jsx
 "use client";
-import { motion } from "framer-motion";
+import { m as motion } from "framer-motion";
+
 import Image from "next/image";
 import {
   FiArrowLeft,

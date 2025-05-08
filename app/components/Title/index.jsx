@@ -1,5 +1,6 @@
 import React from "react";
-import { motion } from "framer-motion";
+import { m as motion } from "framer-motion";
+
 import { montserrat } from "@lib/font";
 
 const Title = ({

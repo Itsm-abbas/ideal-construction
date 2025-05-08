@@ -1,6 +1,6 @@
 "use client";
+import { m as motion } from "framer-motion";
 
-import { motion } from "framer-motion";
 import Image from "next/image";
 
 export default function TeamMemberCard({ name, role, bio, image, delay = 0 }) {

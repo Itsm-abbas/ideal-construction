@@ -1,6 +1,6 @@
 "use client";
+import { m as motion } from "framer-motion";
 
-import { motion } from "framer-motion";
 import { Building2, Home, Layout, RefreshCcw, Handshake } from "lucide-react";
 import { montserrat, poppins } from "@lib/font";
 import Title from "@components/Title";
