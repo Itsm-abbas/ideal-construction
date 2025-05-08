@@ -6,11 +6,6 @@ import { Typewriter } from "react-simple-typewriter";
 import { montserrat, playfair } from "@lib/font";
 
 const backgroundImages = [
-  "/projects/13.png",
-  "/projects/11.jpg",
-  "/projects/10.jpg",
-  "/projects/9.jpg",
-  "/projects/8.jpg",
   "/projects/7.jpg",
   "/projects/6.png",
   "/projects/5.jpg",

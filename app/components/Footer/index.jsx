@@ -2,7 +2,15 @@
 import { playfair } from "@lib/font";
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { FaLinkedin, FaTwitter, FaGithub, FaEnvelope } from "react-icons/fa";
+import {
+  FaLinkedin,
+  FaTwitter,
+  FaGithub,
+  FaEnvelope,
+  FaPhone,
+  FaPhoneSlash,
+  FaPhoneAlt,
+} from "react-icons/fa";
 
 const Footer = () => {
   const containerVariants = {
@@ -36,13 +44,13 @@ const Footer = () => {
           whileInView="visible"
           viewport={{ once: true, margin: "-50px" }}
           variants={containerVariants}
-          className="grid grid-cols-1 md:grid-cols-4 gap-12"
+          className="grid grid-cols-1 md:grid-cols-3 gap-12"
         >
           {/* Branding Column */}
           <motion.div variants={itemVariants}>
             <h3 className={`text-2xl font-bold mb-4 ${playfair.className}`}>
               <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-700 to-teal-600">
-                Sanood Anwar
+                Ideal contruction
               </span>
             </h3>
             <p className="text-gray-600 mb-6">
@@ -51,10 +59,14 @@ const Footer = () => {
             </p>
             <div className="flex space-x-4">
               {[
-                { icon: <FaLinkedin className="w-5 h-5" />, url: "#" },
-                { icon: <FaTwitter className="w-5 h-5" />, url: "#" },
-                { icon: <FaGithub className="w-5 h-5" />, url: "#" },
-                { icon: <FaEnvelope className="w-5 h-5" />, url: "#" },
+                {
+                  icon: <FaPhoneAlt className="w-5 h-5" />,
+                  url: "tel:+923209840974",
+                },
+                {
+                  icon: <FaEnvelope className="w-5 h-5" />,
+                  url: "mailto:Idealconstructionsic@gmail.com",
+                },
               ].map((social, index) => (
                 <motion.a
                   key={index}
@@ -68,7 +80,6 @@ const Footer = () => {
               ))}
             </div>
           </motion.div>
-
           {/* Quick Links */}
           <motion.div variants={itemVariants}>
             <h4 className="text-lg font-semibold text-gray-900 mb-4">
@@ -92,7 +103,6 @@ const Footer = () => {
               ))}
             </ul>
           </motion.div>
-
           {/* Contact Info */}
           <motion.div variants={itemVariants}>
             <h4 className="text-lg font-semibold text-gray-900 mb-4">
@@ -117,8 +127,7 @@ const Footer = () => {
               </motion.li>
             </ul>
           </motion.div>
-
-          {/* Newsletter */}
+          {/* Newsletter
           <motion.div variants={itemVariants}>
             <h4 className="text-lg font-semibold text-gray-900 mb-4">
               Stay Updated
@@ -139,7 +148,7 @@ const Footer = () => {
                 Join
               </motion.button>
             </motion.form>
-          </motion.div>
+          </motion.div> */}
         </motion.div>
 
         {/* Copyright */}
@@ -150,7 +159,8 @@ const Footer = () => {
           className="border-t border-gray-200/50 mt-16 pt-8 flex flex-col md:flex-row justify-between items-center"
         >
           <p className="text-gray-500 mb-4 md:mb-0">
-            © {new Date().getFullYear()} Sanood Anwar. All rights reserved.
+            © {new Date().getFullYear()} Ideal construction. All rights
+            reserved.
           </p>
           <div className="flex space-x-6">
             <Link
@@ -164,12 +174,6 @@ const Footer = () => {
               className="text-gray-500 hover:text-blue-600 transition-colors text-sm"
             >
               Terms of Service
-            </Link>
-            <Link
-              href="#"
-              className="text-gray-500 hover:text-blue-600 transition-colors text-sm"
-            >
-              Cookies
             </Link>
           </div>
         </motion.div>

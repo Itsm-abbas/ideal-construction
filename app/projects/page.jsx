@@ -11,7 +11,7 @@ export default function projects() {
     {
       slug: "modern-10-marla",
       title: "Modern 10 Marla House",
-      image: "/projects/1.jpg",
+      image: "/projects/3.jpg",
       location: "Islamabad",
       size: "10 Marla",
       status: "Completed",
