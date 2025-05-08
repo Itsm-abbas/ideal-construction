@@ -2,51 +2,12 @@
 import { motion } from "motion/react";
 
 import { Building2, Home, Layout, RefreshCcw, Handshake } from "lucide-react";
-import { montserrat, poppins } from "@lib/font";
+import { poppins } from "@lib/font";
 import Title from "@components/Title";
 import services from "@lib/services.json";
 import Subtitle from "@components/Subtitle";
 import Link from "next/link";
-
-// const services = [
-//   {
-//     title: "Project Management & Consultancy",
-//     icon: <Building2 size={40} className="text-[var(--color-primary2)]" />,
-//     description:
-//       "Seamless execution from start to finish, guided by professionalism, transparency, and Islamic values.",
-//     faithNote:
-//       "“Verily, Allah loves that when anyone of you does a job, he should perfect it.” (Bayhaqi)",
-//   },
-//   {
-//     title: "Residential Construction",
-//     icon: <Home size={40} className="text-[var(--color-primary2)]" />,
-//     description:
-//       "From foundations to finishing, we build homes with sincerity and verified material quality — as if we’re building for our own families.",
-//     faithNote: "A home built on trust is a blessing in both worlds.",
-//   },
-//   {
-//     title: "Architectural & 3D Design",
-//     icon: <Layout size={40} className="text-[var(--color-primary2)]" />,
-//     description:
-//       "Visualize before you build — elegant, accurate, and purposeful designs by certified Muslim architects.",
-//     faithNote: "Clarity in vision leads to barakah in execution.",
-//   },
-//   {
-//     title: "Renovation & Remodeling",
-//     icon: <RefreshCcw size={40} className="text-[var(--color-primary2)]" />,
-//     description:
-//       "Give your property a new life with modern upgrades, durable finishes, and peaceful aesthetics.",
-//     faithNote:
-//       "Beautify your space — for indeed, Allah is Beautiful and loves beauty. (Muslim)",
-//   },
-//   {
-//     title: "Investor Partnership Program",
-//     icon: <Handshake size={40} className="text-[var(--color-primary2)]" />,
-//     description:
-//       "Invest, build, and share profits (60/40) with full project handling — all rooted in Shariah principles of fairness and risk-sharing.",
-//     faithNote: "A halal partnership brings rizq, trust, and multiplied reward.",
-//   },
-// ];
+import { FaArrowRight } from "react-icons/fa";
 
 export default function ServicesSection() {
   return (
@@ -134,6 +95,12 @@ export default function ServicesSection() {
                   <div className="mt-auto pt-4 border-t border-gray-200/60 group-hover:border-[#157a6e]/30 transition-colors duration-500">
                     <span className="block text-sm text-[var(--color-primary2)] font-medium italic">
                       {service.faithNote}
+                    </span>
+                  </div>
+                  <div className="flex items-center gap-2 justify-end text-sm text-[var(--color-grayblue)] hover:text-black font-medium mt-auto pt-4 border-t border-gray-200 /30 transition-colors duration-300">
+                    Learn more
+                    <span>
+                      <FaArrowRight className="w-2" />
                     </span>
                   </div>
                 </div>
