@@ -32,7 +32,7 @@ export default function OurProjects() {
   };
 
   return (
-    <section id="projects" className="py-20 mb-12 md:mb-32 px-20">
+    <section id="projects" className="py-20 mb-12 md:mb-32 md:px-20">
       {/* Section Title */}
       <motion.div
         className="text-center mb-12"
