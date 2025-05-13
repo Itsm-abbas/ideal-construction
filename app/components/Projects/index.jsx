@@ -32,7 +32,7 @@ export default function OurProjects() {
   };
 
   return (
-    <section className="py-20 " id="projects">
+    <section id="projects" className="py-20 mb-12 md:mb-32 px-20">
       {/* Section Title */}
       <motion.div
         className="text-center mb-12"
@@ -62,7 +62,7 @@ export default function OurProjects() {
               spaceBetween: 25,
             },
             1024: {
-              slidesPerView: 3.5,
+              slidesPerView: 3,
               spaceBetween: 30,
             },
           }}
@@ -81,7 +81,7 @@ export default function OurProjects() {
           {projects.map((project, idx) => (
             <SwiperSlide key={idx}>
               <Link href={`/project/${project.slug}`}>
-                <div className="relative group overflow-hidden rounded-xl shadow-lg cursor-pointer h-[400px]">
+                <div className="relative group overflow-hidden rounded-xl shadow-lg cursor-pointer h-[270px]">
                   {/* Static Image */}
                   <Image
                     src={project.images[0]}

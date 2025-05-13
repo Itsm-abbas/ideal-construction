@@ -38,7 +38,7 @@ export default function Projects() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 py-20">
           {projects.map((project, idx) => (
             <Link href={`/project/${project.slug}`} key={idx}>
-              <div className="relative group overflow-hidden rounded-xl shadow-lg cursor-pointer h-[400px]">
+              <div className="relative group overflow-hidden rounded-xl shadow-lg cursor-pointer h-[280px]">
                 {/* Static Image */}
                 <Image
                   src={project.images[0]}

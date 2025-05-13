@@ -3,13 +3,15 @@ import { motion } from "motion/react";
 
 import Image from "next/image";
 
-import { Montserrat, Playfair_Display } from "next/font/google";
 import Navbar from "@components/Navbar";
-
-const montserrat = Montserrat({ subsets: ["latin"] });
-const playfair = Playfair_Display({ subsets: ["latin"] });
+import { montserrat, playfair, poppins } from "@lib/font";
+import Title from "@components/TitleWF";
+import { FaCheck, FaDollarSign, FaEye } from "react-icons/fa";
+import { LucideCircleDollarSign, ShieldCheck } from "lucide-react";
 
 const AboutPage = () => {
+  const whatsappLink = `https://wa.me/923209840974?text=Hello%2C%20I%20want%20a%20quote%20for%20construction%20work`;
+
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -59,6 +61,179 @@ const AboutPage = () => {
       <Navbar />
       <div className="min-h-screen ">
         <div className="max-w-6xl mx-auto px-6 py-28 relative z-10">
+          {/* Vision, Mission & Values Section */}
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={containerVariants}
+            className="mb-32"
+          >
+            <motion.div variants={itemVariants} className="mb-20">
+              <Title title={"Our Foundation"} />
+            </motion.div>
+
+            {/* Vision Card */}
+            <motion.div
+              variants={itemVariants}
+              className="mb-12 bg-white p-8 rounded-2xl shadow-lg border border-gray-100"
+            >
+              <div className="flex items-start mb-6">
+                <div className="bg-[var(--color-primary2)]/10 p-3 rounded-lg text-[var(--color-primary2)] mr-5">
+                  <FaEye className="w-8 h-8" />
+                </div>
+                <div>
+                  <h3
+                    className={`${poppins.className} text-2xl font-bold text-gray-900 mb-4`}
+                  >
+                    Vision
+                  </h3>
+                  <p className="text-gray-700 italic">
+                    "With the will of Allah, we build with Ihsan (Allah sees all
+                    that we do) — crafting spaces with sincerity, trust, and
+                    excellence, knowing that every structure we create is a
+                    responsibility before Him and a service to humanity."
+                  </p>
+                </div>
+              </div>
+            </motion.div>
+
+            {/* Mission Card */}
+            <motion.div
+              variants={itemVariants}
+              className="mb-12 bg-white p-8 rounded-2xl shadow-lg border border-gray-100"
+            >
+              <div className="flex items-start mb-6">
+                <div className="bg-[var(--color-primary2)]/10 p-3 rounded-lg text-[var(--color-primary2)] mr-5">
+                  <ShieldCheck className="w-8 h-8" />
+                </div>
+                <div>
+                  <h3
+                    className={`${poppins.className} text-2xl font-bold text-gray-900 mb-4`}
+                  >
+                    Mission
+                  </h3>
+                  <p className="text-gray-700">
+                    Our mission is to implement the will of Allah Almighty in
+                    all our business dealings by consistently meeting our
+                    customers' expectations in the services we offer. Guided by
+                    Shariah-based business practices and ethics, we deliver
+                    high-quality, transparent, and cost-effective construction
+                    solutions. With a team of skilled architects and
+                    professionals, we ensure precision in design, verified
+                    material quality, and efficient project management, creating
+                    durable and trusted spaces that meet our clients' needs.
+                  </p>
+                </div>
+              </div>
+            </motion.div>
+
+            {/* Values Card */}
+            <motion.div
+              variants={itemVariants}
+              className="bg-white p-8 rounded-2xl shadow-lg border border-gray-100"
+            >
+              <div className="flex items-start mb-6">
+                <div className="bg-[var(--color-primary2)]/10 p-3 rounded-lg text-[var(--color-primary2)] mr-5">
+                  <LucideCircleDollarSign className="w-8 h-8" />
+                </div>
+                <div>
+                  <h3
+                    className={`${poppins.className} text-2xl font-bold text-gray-900 mb-4`}
+                  >
+                    Core Values
+                  </h3>
+                  <div className="space-y-6">
+                    {/* Ihsan */}
+                    <div className="flex items-start">
+                      <div className="bg-green-100 p-2 rounded-full mr-4">
+                        <span className="text-green-600 font-bold">
+                          <FaCheck />
+                        </span>
+                      </div>
+                      <div>
+                        <h4 className="font-bold text-gray-800">Ihsan</h4>
+                        <p className="text-gray-600">
+                          Doing everything with excellence, sincerity, and the
+                          awareness that Allah sees all that we do.
+                        </p>
+                      </div>
+                    </div>
+
+                    {/* Honesty */}
+                    <div className="flex items-start">
+                      <div className="bg-green-100 p-2 rounded-full mr-4">
+                        <span className="text-green-600 font-bold">
+                          <FaCheck />
+                        </span>
+                      </div>
+                      <div>
+                        <h4 className="font-bold text-gray-800">Honesty</h4>
+                        <p className="text-gray-600">
+                          Truthfulness in every promise, every price, and every
+                          project update.
+                        </p>
+                      </div>
+                    </div>
+
+                    {/* Trustworthiness */}
+                    <div className="flex items-start">
+                      <div className="bg-green-100 p-2 rounded-full mr-4">
+                        <span className="text-green-600 font-bold">
+                          <FaCheck />
+                        </span>
+                      </div>
+                      <div>
+                        <h4 className="font-bold text-gray-800">
+                          Trustworthiness
+                        </h4>
+                        <p className="text-gray-600">
+                          Fulfilling every commitment as a sacred trust, whether
+                          to clients, partners, or our team.
+                        </p>
+                      </div>
+                    </div>
+
+                    {/* Fairness & Justice */}
+                    <div className="flex items-start">
+                      <div className="bg-green-100 p-2 rounded-full mr-4">
+                        <span className="text-green-600 font-bold">
+                          <FaCheck />
+                        </span>
+                      </div>
+                      <div>
+                        <h4 className="font-bold text-gray-800">
+                          Fairness & Justice
+                        </h4>
+                        <p className="text-gray-600">
+                          Ensuring fairness in pricing, treatment, and decisions
+                          — for both clients and laborers.
+                        </p>
+                      </div>
+                    </div>
+
+                    {/* Gentleness & Kindness */}
+                    <div className="flex items-start">
+                      <div className="bg-green-100 p-2 rounded-full mr-4">
+                        <span className="text-green-600 font-bold">
+                          <FaCheck />
+                        </span>
+                      </div>
+                      <div>
+                        <h4 className="font-bold text-gray-800">
+                          Gentleness & Kindness
+                        </h4>
+                        <p className="text-gray-600">
+                          Dealing with clients, workers, and suppliers with
+                          compassion and respect.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+          </motion.div>
           {/* Hero Section */}
           <motion.div
             initial="hidden"
@@ -124,7 +299,6 @@ const AboutPage = () => {
               </div>
             </motion.div>
           </motion.div>
-
           {/* Timeline Section */}
           <motion.div
             initial="hidden"
@@ -208,7 +382,6 @@ const AboutPage = () => {
               </motion.div>
             </div>
           </motion.div>
-
           {/* Philosophy Section */}
           <motion.div
             initial="hidden"
@@ -219,11 +392,13 @@ const AboutPage = () => {
           >
             <motion.div variants={itemVariants} className="mb-12">
               <h2
-                className={`text-4xl font-bold mb-6 text-gray-900 ${playfair.className}`}
+                className={`text-4xl font-bold mb-6 text-gray-900 ${montserrat.className}`}
               >
                 Entrepreneurial Philosophy
               </h2>
-              <div className="w-24 h-1 bg-gradient-to-r from-blue-500 to-teal-400 rounded-full" />
+              <div
+                className={` w-24 h-1 bg-gradient-to-r from-[var(--color-primary2)] to-[var(--color-primary1)] rounded-full`}
+              />
             </motion.div>
 
             <motion.div
@@ -264,7 +439,6 @@ const AboutPage = () => {
               </div>
             </motion.div>
           </motion.div>
-
           {/* Skills Section */}
           <motion.div
             initial="hidden"
@@ -275,11 +449,11 @@ const AboutPage = () => {
           >
             <motion.div variants={itemVariants} className="mb-12">
               <h2
-                className={`text-4xl font-bold mb-6 text-gray-900 ${playfair.className}`}
+                className={`text-4xl font-bold mb-6 text-gray-900 ${montserrat.className}`}
               >
                 Core Competencies
               </h2>
-              <div className="w-24 h-1 bg-gradient-to-r from-blue-500 to-teal-400 rounded-full" />
+              <div className="w-24 h-1 bg-gradient-to-r from-[var(--color-primary2)] to-[var(--color-primary1)] rounded-full" />
             </motion.div>
 
             <motion.div
@@ -310,7 +484,6 @@ const AboutPage = () => {
               ))}
             </motion.div>
           </motion.div>
-
           {/* CTA Section */}
           <motion.div
             initial="hidden"
@@ -325,7 +498,7 @@ const AboutPage = () => {
               >
                 Let's Build Something Extraordinary
               </h2>
-              <div className="w-24 h-1 bg-gradient-to-r from-blue-500 to-teal-400 rounded-full mx-auto" />
+              <div className="w-24 h-1 bg-gradient-to-r from-[var(--color-primary2)] to-[var(--color-primary1)] rounded-full mx-auto" />
             </motion.div>
 
             <motion.p
@@ -342,9 +515,11 @@ const AboutPage = () => {
               whileTap={{ scale: 0.98 }}
               className="inline-block"
             >
-              <button className="bg-[var(--color-primary2)] px-5 py-3 rounded-sm text-white">
-                <span className="relative z-10">Get In Touch</span>
-              </button>
+              <a href={whatsappLink}>
+                <button className="cursor-pointer bg-[var(--color-primary2)] px-5 py-3 rounded-sm text-white">
+                  <span className="relative z-10">Get In Touch</span>
+                </button>
+              </a>
             </motion.div>
           </motion.div>
         </div>

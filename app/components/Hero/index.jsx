@@ -7,12 +7,13 @@ import { Typewriter } from "react-simple-typewriter";
 import { montserrat, playfair } from "@lib/font";
 
 const backgroundImages = [
-  "/projects/7.jpg",
-  "/projects/6.png",
-  "/projects/5.jpg",
-  "/projects/4.jpg",
-  "/projects/3.jpg",
-  "/projects/2.jpg",
+  "/projects/5marla.jpg",
+  // "/projects/5marla(1).jpg",
+  "/projects/5marla.png",
+  "/projects/7marla.jpg",
+  "/projects/10marla.jpg",
+  "/projects/10marla.png",
+  "/projects/7marlapair.jpg",
 ];
 
 export default function Hero() {
@@ -35,6 +36,7 @@ export default function Hero() {
           className="absolute inset-0 bg-cover bg-center transition-opacity duration-[3000ms]"
           style={{
             backgroundImage: `url(${img})`,
+
             opacity: i === index ? 1 : 0,
             zIndex: i === index ? 1 : 0,
             transition: "opacity 3s ease-in-out, transform 6s ease-in-out",
@@ -58,7 +60,7 @@ export default function Hero() {
           We Build With{" "}
           <span style={{ color: "white" }}>
             <Typewriter
-              words={["Ihsan", "Trust", "Excellence"]}
+              words={["Ihsan", "Honesty", "Trust", "Fairness", "Excellence"]}
               loop
               cursor
               cursorStyle="|"

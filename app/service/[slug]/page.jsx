@@ -15,6 +15,7 @@ export default function ServiceDetailPage({ params }) {
   if (!service) {
     notFound();
   }
+  const whatsappLink = `https://wa.me/923209840974?text=Hello%2C%20I%20want%20a%20quote%20for%20construction%20work`;
 
   return (
     <>
@@ -132,9 +133,11 @@ export default function ServiceDetailPage({ params }) {
                   <p className="mb-5 opacity-90">
                     Contact us today to discuss your project requirements.
                   </p>
-                  <button className="w-full bg-white text-[#157a6e] hover:bg-gray-100 font-medium py-3 px-6 rounded-lg transition duration-300">
-                    Schedule Consultation
-                  </button>
+                  <a href={whatsappLink}>
+                    <button className="w-full cursor-pointer bg-white text-[#157a6e] hover:bg-gray-100 font-medium py-3 px-6 rounded-lg transition duration-300">
+                      Schedule Consultation
+                    </button>
+                  </a>
                 </div>
               </div>
 
@@ -144,41 +147,22 @@ export default function ServiceDetailPage({ params }) {
                   Our Process
                 </h3>
                 <div className="space-y-6">
-                  {[
-                    {
-                      step: "1",
-                      title: "Initial Consultation",
-                      desc: "We discuss your vision and requirements",
-                    },
-                    {
-                      step: "2",
-                      title: "Planning & Design",
-                      desc: "Creating tailored solutions for your needs",
-                    },
-                    {
-                      step: "3",
-                      title: "Execution",
-                      desc: "Quality implementation with regular updates",
-                    },
-                    {
-                      step: "4",
-                      title: "Delivery",
-                      desc: "Final review and handover",
-                    },
-                  ].map((item, index) => (
+                  {service.ourProcess.map((item, index) => (
                     <div
                       key={index}
                       className="flex gap-4 animate-fade-in-up"
                       style={{ animationDelay: `${900 + index * 100}ms` }}
                     >
                       <div className="flex-shrink-0 w-10 h-10 rounded-full bg-[#157a6e] text-white flex items-center justify-center font-bold">
-                        {item.step}
+                        {index + 1}
                       </div>
                       <div>
                         <h4 className="font-medium text-gray-800">
                           {item.title}
                         </h4>
-                        <p className="text-gray-600 text-sm">{item.desc}</p>
+                        <p className="text-gray-600 text-sm">
+                          {item.description}
+                        </p>
                       </div>
                     </div>
                   ))}

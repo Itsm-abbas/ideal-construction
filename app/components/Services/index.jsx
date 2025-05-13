@@ -1,13 +1,13 @@
 "use client";
 import { motion } from "motion/react";
 
-import { Building2, Home, Layout, RefreshCcw, Handshake } from "lucide-react";
 import { poppins } from "@lib/font";
 import Title from "@components/Title";
 import services from "@lib/services.json";
 import Subtitle from "@components/Subtitle";
 import Link from "next/link";
 import { FaArrowRight } from "react-icons/fa";
+import Image from "next/image";
 
 export default function ServicesSection() {
   return (
@@ -35,73 +35,47 @@ export default function ServicesSection() {
                   duration: 0.7,
                   ease: [0.16, 1, 0.3, 1],
                 }}
-                className="group p-8 border border-gray-100/70 bg-white rounded-3xl shadow-xs hover:shadow-lg transition-all duration-500 hover:border-transparent relative h-full flex flex-col"
+                className="group  border border-gray-100/70 bg-white rounded-xl shadow-xs hover:shadow-lg transition-all duration-500 hover:border-transparent relative h-full flex flex-col"
               >
                 {/* Subtle background effect on hover */}
-                <div className="absolute inset-0 bg-gradient-to-br from-white to-gray-50 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-3xl" />
+                <div className="  absolute inset-0 bg-gradient-to-br from-white to-gray-50 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-3xl" />
 
-                <div className="relative z-10 flex-1 flex flex-col">
-                  {/* Icon with nice background */}
-                  <div className="mb-6 p-3 w-14 h-14 flex items-center justify-center bg-[#157a6e]/10 rounded-xl text-[#157a6e] group-hover:bg-[#157a6e]/20 transition-colors duration-300">
-                    {service.icon === "Building2" && (
-                      <Building2
-                        size={40}
-                        className="text-[var(--color-primary2)]"
-                      />
-                    )}
-                    {service.icon === "Home" && (
-                      <Home
-                        size={40}
-                        className="text-[var(--color-primary2)]"
-                      />
-                    )}
-                    {service.icon === "Layout" && (
-                      <Layout
-                        size={40}
-                        className="text-[var(--color-primary2)]"
-                      />
-                    )}
-                    {service.icon === "RefreshCcw" && (
-                      <RefreshCcw
-                        size={40}
-                        className="text-[var(--color-primary2)]"
-                      />
-                    )}
-                    {service.icon === "Handshake" && (
-                      <Handshake
-                        size={40}
-                        className="text-[var(--color-primary2)]"
-                      />
-                    )}
-                  </div>
+                <div className="relative z-10 flex-1 flex flex-col ">
+                  <Image
+                    width={150}
+                    height={200}
+                    className="w-full"
+                    src={service.image}
+                    alt={service.title}
+                  />
 
                   {/* Title container with proper spacing */}
-                  <div className="mb-4">
-                    <h3
-                      className={`text-xl text-[var(--color-primary1)] leading-tight ${poppins.className} mb-2`}
-                    >
-                      {service.title}
-                    </h3>
-                    {/* Underline that appears on hover */}
-                    <div className="w-0 h-1 bg-[var(--color-primary2)] opacity-70 group-hover:w-full transition-all duration-500 mt-2"></div>
-                  </div>
-
-                  {/* Description with better readability */}
-                  <p className="text-gray-600 leading-relaxed mb-5 text-lg flex-1">
-                    {service.description}
-                  </p>
-
-                  {/* Faith note with decorative border */}
-                  <div className="mt-auto pt-4 border-t border-gray-200/60 group-hover:border-[#157a6e]/30 transition-colors duration-500">
-                    <span className="block text-sm text-[var(--color-primary2)] font-medium italic">
-                      {service.faithNote}
-                    </span>
-                  </div>
-                  <div className="flex items-center gap-2 justify-end text-sm text-[var(--color-grayblue)] hover:text-black font-medium mt-auto pt-4 border-t border-gray-200 /30 transition-colors duration-300">
-                    Learn more
-                    <span>
-                      <FaArrowRight className="w-2" />
-                    </span>
+                  <div className="p-6 flex flex-col items-center justify-start flex-1 gap-4">
+                    <div className="">
+                      <h3
+                        className={`text-lg text-[var(--color-primary1)] leading-tight ${poppins.className} `}
+                      >
+                        {service.title}
+                      </h3>
+                      {/* Underline that appears on hover */}
+                      <div className="w-0 h-1 bg-[var(--color-primary2)] opacity-70 group-hover:w-full transition-all duration-500 mt-2"></div>
+                    </div>
+                    {/* Description with better readability */}
+                    <p className="text-gray-600  mb-5 flex-1 ">
+                      {service.description}
+                    </p>
+                    {/* Faith note with decorative border */}
+                    <div className="mt-auto  border-t w-full border-gray-200/60 group-hover:border-[#157a6e]/30 transition-colors duration-500">
+                      <span className="block text-sm text-[var(--color-primary2)] font-medium italic">
+                        {service.faithNote}
+                      </span>
+                    </div>
+                    <div className="flex items-center gap-2 justify-end text-sm text-[var(--color-accent)] hover:opacity-80 font-medium mt-auto pt-4 border-t border-gray-200 /30 transition-colors duration-300 uppercase w-full">
+                      Read More
+                      <span>
+                        <FaArrowRight className="w-2" />
+                      </span>
+                    </div>
                   </div>
                 </div>
               </motion.div>
