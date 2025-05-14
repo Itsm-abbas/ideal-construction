@@ -23,7 +23,7 @@ export default function ServicesSection() {
           }
         />
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 py-12 md:py-24 px-4 sm:px-6">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 py-12 md:py-24">
           {services.map((service, index) => (
             <Link href={`/service/${service.slug}`} passHref key={index}>
               <motion.div
@@ -43,8 +43,8 @@ export default function ServicesSection() {
                 <div className="relative z-10 flex-1 flex flex-col ">
                   <Image
                     width={150}
-                    height={200}
-                    className="w-full"
+                    height={150}
+                    className="w-full h-52 object-cover rounded-t-xl group-hover:rounded-t-3xl transition-all duration-500"
                     src={service.image}
                     alt={service.title}
                   />
@@ -65,7 +65,7 @@ export default function ServicesSection() {
                       {service.description}
                     </p>
                     {/* Faith note with decorative border */}
-                    <div className="mt-auto  border-t w-full border-gray-200/60 group-hover:border-[#157a6e]/30 transition-colors duration-500">
+                    <div className="mt-auto  border-t pt-4 w-full border-gray-200/60 group-hover:border-[#157a6e]/30 transition-colors duration-500">
                       <span className="block text-sm text-[var(--color-primary2)] font-medium italic">
                         {service.faithNote}
                       </span>

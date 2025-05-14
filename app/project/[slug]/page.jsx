@@ -10,13 +10,12 @@ import {
   FiLayers,
   FiDollarSign,
 } from "react-icons/fi";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination, Autoplay } from "swiper/modules";
 import Link from "next/link";
 // import { useParams } from "next/navigation";
 import { montserrat } from "@lib/font";
 import { useParams } from "next/navigation";
 import Navbar from "@components/Navbar";
+import { FaCheck } from "react-icons/fa";
 
 export default function ProjectDetail() {
   const { slug } = useParams();
@@ -32,17 +31,24 @@ export default function ProjectDetail() {
       >
         {/* Hero Section */}
 
-        <div className="relative h-[90vh] min-h-[500px] w-full overflow-hidden">
+        <div className="relative md:h-screen min-h-[500px] w-full overflow-hidden">
           {/* Black overlay for general text readability */}
           <div className=" absolute inset-0 bg-black/10 " />
-
           {/* NEW: Top gradient for navbar visibility */}
-          <div className=" absolute top-0 left-0 w-full h-60 bg-gradient-to-b from-black/80 to-transparent z-20" />
+          <div className=" absolute top-0 left-0 w-full h-32 md:h-60 bg-gradient-to-b from-black/80 to-transparent z-20" />
           <Image
             src={project.images[0]}
             alt={project.images[0]}
             fill
-            className="object-cover"
+            className="object-cover block md:hidden "
+            priority
+          />{" "}
+          <Image
+            src={project.images[0]}
+            alt={project.images[0]}
+            width={600}
+            height={400}
+            className="hidden md:block w-full h-full"
             priority
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-transparent flex items-end pb-16">
@@ -60,7 +66,7 @@ export default function ProjectDetail() {
                   <FiArrowLeft className="mr-2" /> View All Projects
                 </Link>
                 <h1
-                  className={`text-4xl lg:text-6xl font-bold text-white mb-4 leading-tight ${montserrat.className}`}
+                  className={`text-4xl lg:text-6xl text-white mb-4 leading-tight ${montserrat.className}`}
                 >
                   {project.title}
                 </h1>
@@ -108,11 +114,11 @@ export default function ProjectDetail() {
                 className="mb-16"
               >
                 <h2
-                  className={`text-3xl font-bold text-gray-900 mb-8 ${montserrat.className}`}
+                  className={`text-3xl text-gray-900 mb-6 ${montserrat.className}`}
                 >
                   Design & Features
                 </h2>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-6">
                   {project.features.map((feature, index) => (
                     <motion.div
                       key={index}
@@ -262,9 +268,11 @@ export default function ProjectDetail() {
                   <ul className="space-y-3">
                     {project.premiumMaterials.map((material, index) => (
                       <li key={index} className="flex items-start">
-                        <span className="bg-green-100 text-green-600 rounded-full w-5 h-5 flex items-center justify-center mr-3 mt-0.5 flex-shrink-0">
-                          ✓
-                        </span>
+                        <div className="bg-green-100 p-2 rounded-full mr-4">
+                          <span className="text-green-600 font-bold">
+                            <FaCheck />
+                          </span>
+                        </div>
                         <span className="text-gray-700">{material}</span>
                       </li>
                     ))}

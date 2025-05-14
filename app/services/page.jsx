@@ -51,7 +51,7 @@ export default function ServicesPage() {
                     <Image
                       width={150}
                       height={200}
-                      className="w-full"
+                      className="w-full h-52 object-cover rounded-t-xl group-hover:rounded-t-3xl transition-all duration-500"
                       src={service.image}
                       alt={service.title}
                     />

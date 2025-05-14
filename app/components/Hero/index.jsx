@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Typewriter } from "react-simple-typewriter";
-import { montserrat, playfair } from "@lib/font";
+import { montserrat, playfair, poppins } from "@lib/font";
 
 const backgroundImages = [
   "/projects/5marla.jpg",
@@ -25,7 +25,7 @@ export default function Hero() {
   }, []);
 
   return (
-    <div className="relative h-screen w-full overflow-hidden bg-black">
+    <div className="relative h-[70vh] md:h-screen w-full overflow-hidden bg-black">
       {/* Animated Backgrounds */}
       {backgroundImages.map((img, i) => (
         <motion.div
@@ -39,7 +39,7 @@ export default function Hero() {
             duration: 10,
             ease: "easeInOut",
           }}
-          className="absolute inset-0 bg-cover bg-center md:bg-center bg-[position:center_top] transition-all"
+          className="absolute inset-0 bg-cover bg-center md:bg-center transition-all"
           style={{
             backgroundImage: `url(${img})`,
             zIndex: i === index ? 1 : 0,
@@ -72,14 +72,20 @@ export default function Hero() {
             />
           </span>
         </h1>
-
         <p
-          className={`max-w-3xl text-sm sm:text-base md:text-lg italic ${playfair.className}`}
+          className={`hidden md:flex max-w-3xl text-sm sm:text-base md:text-lg  ${poppins.className}`}
           style={{ color: "var(--color-lightgray)" }}
         >
           “With the will of Allah, we build with Ihsan — crafting spaces with
           sincerity, trust, and excellence, knowing that every structure we
           create is a responsibility before Him and a service to humanity.”
+        </p>{" "}
+        <p
+          className={`flex md:hidden max-w-3xl text-sm sm:text-base md:text-lg italic ${poppins.className}`}
+          style={{ color: "var(--color-lightgray)" }}
+        >
+          "With Allah's will, we build with Ihsan — sincere, trustworthy, and
+          excellent, serving humanity and fulfilling our duty to Him."
         </p>
       </div>
     </div>

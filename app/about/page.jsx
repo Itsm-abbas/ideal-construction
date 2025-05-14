@@ -78,9 +78,9 @@ const AboutPage = () => {
               variants={itemVariants}
               className="mb-12 bg-white p-8 rounded-2xl shadow-lg border border-gray-100"
             >
-              <div className="flex items-start mb-6">
+              <div className="flex flex-col md:flex-row gap-6 md:gap-0 items-start mb-6">
                 <div className="bg-[var(--color-primary2)]/10 p-3 rounded-lg text-[var(--color-primary2)] mr-5">
-                  <FaEye className="w-8 h-8" />
+                  <FaEye className="w-6 h-6 md:w-8 md:h-8" />
                 </div>
                 <div>
                   <h3
@@ -103,9 +103,9 @@ const AboutPage = () => {
               variants={itemVariants}
               className="mb-12 bg-white p-8 rounded-2xl shadow-lg border border-gray-100"
             >
-              <div className="flex items-start mb-6">
+              <div className="flex flex-col md:flex-row gap-6 md:gap-0 items-start mb-6">
                 <div className="bg-[var(--color-primary2)]/10 p-3 rounded-lg text-[var(--color-primary2)] mr-5">
-                  <ShieldCheck className="w-8 h-8" />
+                  <ShieldCheck className="w-6 h-6 md:w-8 md:h-8" />
                 </div>
                 <div>
                   <h3
@@ -131,11 +131,11 @@ const AboutPage = () => {
             {/* Values Card */}
             <motion.div
               variants={itemVariants}
-              className="bg-white p-8 rounded-2xl shadow-lg border border-gray-100"
+              className="bg-white p-6 md:p-8 rounded-2xl shadow-lg border border-gray-100"
             >
-              <div className="flex items-start mb-6">
+              <div className="flex flex-col md:flex-row gap-6 md:gap-0 items-start mb-6">
                 <div className="bg-[var(--color-primary2)]/10 p-3 rounded-lg text-[var(--color-primary2)] mr-5">
-                  <LucideCircleDollarSign className="w-8 h-8" />
+                  <LucideCircleDollarSign className="w-6 h-6 md:w-8 md:h-8" />
                 </div>
                 <div>
                   <h3
@@ -309,7 +309,7 @@ const AboutPage = () => {
           >
             <motion.div variants={itemVariants} className="mb-12">
               <h2
-                className={`text-4xl font-bold mb-6 text-gray-900 ${montserrat.className}`}
+                className={`text-3xl md:text-4xl font-bold mb-6 text-gray-900 ${montserrat.className}`}
               >
                 My Journey
               </h2>
@@ -392,7 +392,7 @@ const AboutPage = () => {
           >
             <motion.div variants={itemVariants} className="mb-12">
               <h2
-                className={`text-4xl font-bold mb-6 text-gray-900 ${montserrat.className}`}
+                className={`text-3xl md:text-4xl font-bold mb-6 text-gray-900 ${montserrat.className}`}
               >
                 Entrepreneurial Philosophy
               </h2>
@@ -405,7 +405,7 @@ const AboutPage = () => {
               variants={itemVariants}
               className="bg-gradient-to-br from-[var(--color-primary2)] to-[var(--color-primary1)] rounded-3xl p-0.5 shadow-2xl"
             >
-              <div className="bg-white/5 backdrop-blur-sm rounded-[calc(1.5rem-1px)] p-12 border border-white/10">
+              <div className="bg-white/5 backdrop-blur-sm rounded-[calc(1.5rem-1px)] p-6 md:p-10 border border-white/10">
                 <div className="max-w-3xl mx-auto">
                   <motion.blockquote
                     initial={{ opacity: 0, scale: 0.95 }}
@@ -415,7 +415,7 @@ const AboutPage = () => {
                       transition: { delay: 0.5 },
                     }}
                     viewport={{ once: true }}
-                    className="text-2xl md:text-3xl font-medium text-white mb-8 leading-snug"
+                    className="text-2xl md:text-3xl text-white mb-8 leading-snug"
                   >
                     "I believe in effectual entrepreneurship—creating
                     opportunities from available means rather than waiting for
@@ -449,7 +449,7 @@ const AboutPage = () => {
           >
             <motion.div variants={itemVariants} className="mb-12">
               <h2
-                className={`text-4xl font-bold mb-6 text-gray-900 ${montserrat.className}`}
+                className={`text-3xl md:text-4xl mb-6 text-gray-900 ${montserrat.className}`}
               >
                 Core Competencies
               </h2>

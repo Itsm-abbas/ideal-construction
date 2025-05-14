@@ -1,9 +1,7 @@
-// components/ScrollToTop.jsx
 "use client";
 
 import { useState, useEffect } from "react";
-import { motion } from "motion/react";
-
+import { motion } from "framer-motion";
 import { ArrowUp } from "lucide-react";
 
 export default function ScrollToTop() {
@@ -11,11 +9,7 @@ export default function ScrollToTop() {
 
   useEffect(() => {
     const toggleVisibility = () => {
-      if (window.scrollY > 300) {
-        setIsVisible(true);
-      } else {
-        setIsVisible(false);
-      }
+      setIsVisible(window.scrollY > 300);
     };
 
     window.addEventListener("scroll", toggleVisibility);

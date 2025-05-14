@@ -2,6 +2,7 @@ import { notFound } from "next/navigation";
 import servicesData from "@lib/services.json";
 import { Home, Building2, Layout, RefreshCcw, Handshake } from "lucide-react";
 import Navbar from "@components/Navbar";
+import { montserrat } from "@lib/font";
 
 export async function generateStaticParams() {
   return servicesData.map((service) => ({
@@ -24,8 +25,8 @@ export default function ServiceDetailPage({ params }) {
         {/* Hero Section */}
         <div className="relative mb-16 rounded-3xl overflow-hidden bg-gradient-to-r from-[#157a6e] to-[#0f5e54] animate-fade-in-up">
           <div className="absolute inset-0 bg-noise opacity-10" />
-          <div className="relative z-10 py-16 px-8 sm:py-24 sm:px-16 text-white">
-            <div className="mb-6 p-4 w-20 h-20 flex items-center justify-center bg-white/20 rounded-xl backdrop-blur-sm animate-fade-in-up animation-delay-100">
+          <div className="relative z-10 py-16 px-5 sm:py-24 sm:px-16 text-white">
+            <div className="mb-6 p-4 w-16 h-16 md:w-20 md:h-20 flex items-center justify-center bg-white/20 rounded-xl backdrop-blur-sm animate-fade-in-up animation-delay-100">
               {service.icon === "Building2" && (
                 <Building2 size={40} className="text-white" />
               )}
@@ -42,7 +43,9 @@ export default function ServiceDetailPage({ params }) {
                 <Handshake size={40} className="text-white" />
               )}
             </div>
-            <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight animate-fade-in-up animation-delay-200">
+            <h1
+              className={`${montserrat.className} text-3xl md:text-6xl \ mb-6 leading-tight animate-fade-in-up animation-delay-200`}
+            >
               {service.title}
             </h1>
             <p className="text-xl md:text-2xl max-w-3xl opacity-90 leading-relaxed animate-fade-in-up animation-delay-300">
@@ -56,7 +59,9 @@ export default function ServiceDetailPage({ params }) {
           {/* Left Column */}
           <div>
             <div className="mb-12 animate-fade-in-up animation-delay-400">
-              <h2 className="text-2xl font-semibold text-gray-800 mb-6 relative inline-block">
+              <h2
+                className={`${montserrat.className} text-2xl font-semibold text-gray-800 mb-6 relative inline-block`}
+              >
                 Service Overview
                 <span className="absolute bottom-0 left-0 w-full h-1 bg-[#157a6e] opacity-30"></span>
               </h2>
@@ -66,7 +71,7 @@ export default function ServiceDetailPage({ params }) {
             </div>
 
             <div className="mb-12 animate-fade-in-up animation-delay-500">
-              <div className="bg-gradient-to-br from-[#f0f9f8] to-[#e0f3f1] p-8 rounded-2xl border border-[#157a6e]/10 relative overflow-hidden">
+              <div className="bg-gradient-to-br from-[#f0f9f8] to-[#e0f3f1] p-4 md:p-8 rounded-2xl border border-[#157a6e]/10 relative overflow-hidden">
                 <div className="absolute -right-10 -top-10 w-40 h-40 bg-[#157a6e]/10 rounded-full"></div>
                 <div className="absolute -left-10 -bottom-10 w-40 h-40 bg-[#157a6e]/5 rounded-full"></div>
                 <div className="relative z-10">
@@ -92,8 +97,10 @@ export default function ServiceDetailPage({ params }) {
           {/* Right Column */}
           <div>
             <div className="sticky top-8">
-              <div className="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 animate-fade-in-up animation-delay-700">
-                <h2 className="text-2xl font-semibold text-gray-800 mb-6 pb-2 border-b border-gray-200">
+              <div className="bg-white p-6  md:p-8 rounded-2xl shadow-lg border border-gray-100 animate-fade-in-up animation-delay-700">
+                <h2
+                  className={`${montserrat.className} text-2xl text-gray-800 mb-6 pb-2 border-b border-gray-200`}
+                >
                   Key Features
                 </h2>
 
@@ -126,7 +133,7 @@ export default function ServiceDetailPage({ params }) {
                   ))}
                 </ul>
 
-                <div className="mt-8 bg-gradient-to-r from-[#157a6e] to-[#0f5e54] p-6 rounded-xl text-white animate-fade-in-up animation-delay-800">
+                <div className="mt-8 bg-gradient-to-r  from-[var(--color-primary2)] to-[var(--color-primary1)] p-6 rounded-xl text-white animate-fade-in-up animation-delay-800">
                   <h3 className="text-xl font-semibold mb-3">
                     Ready to get started?
                   </h3>
@@ -134,7 +141,7 @@ export default function ServiceDetailPage({ params }) {
                     Contact us today to discuss your project requirements.
                   </p>
                   <a href={whatsappLink}>
-                    <button className="w-full cursor-pointer bg-white text-[#157a6e] hover:bg-gray-100 font-medium py-3 px-6 rounded-lg transition duration-300">
+                    <button className="w-full cursor-pointer bg-white text-[var(--color-primary2)] hover:bg-gray-100 font-medium py-3 px-6 rounded-lg transition duration-300">
                       Schedule Consultation
                     </button>
                   </a>
@@ -142,8 +149,10 @@ export default function ServiceDetailPage({ params }) {
               </div>
 
               {/* Process Steps */}
-              <div className="mt-8 bg-gray-50 p-8 rounded-2xl border border-gray-200 animate-fade-in-up animation-delay-900">
-                <h3 className="text-xl font-semibold text-gray-800 mb-6">
+              <div className="mt-8 bg-gray-50 p-6 md:p-8 rounded-2xl border border-gray-200 animate-fade-in-up animation-delay-900">
+                <h3
+                  className={`text-xl ${montserrat.className} text-gray-800 mb-6`}
+                >
                   Our Process
                 </h3>
                 <div className="space-y-6">
@@ -153,7 +162,7 @@ export default function ServiceDetailPage({ params }) {
                       className="flex gap-4 animate-fade-in-up"
                       style={{ animationDelay: `${900 + index * 100}ms` }}
                     >
-                      <div className="flex-shrink-0 w-10 h-10 rounded-full bg-[#157a6e] text-white flex items-center justify-center font-bold">
+                      <div className="flex-shrink-0 w-10 h-10 rounded-full bg-[var(--color-primary2)] text-white flex items-center justify-center font-bold">
                         {index + 1}
                       </div>
                       <div>
