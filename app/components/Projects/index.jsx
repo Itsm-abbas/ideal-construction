@@ -5,14 +5,15 @@ import { motion } from "motion/react";
 import projects from "@lib/projects";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
 import Image from "next/image";
 import Link from "next/link";
 import { montserrat } from "@lib/font";
 import Title from "@components/Title";
 import Subtitle from "@components/Subtitle";
-import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
+
 import { useRef } from "react";
 
 export default function OurProjects() {
