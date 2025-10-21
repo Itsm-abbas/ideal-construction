@@ -20,9 +20,12 @@ export default function Navbar({ home }) {
   const whatsappLink = `https://wa.me/923209840974?text=Hello%2C%20I%20want%20a%20quote%20for%20construction%20work`;
 
   useEffect(() => {
+    if (typeof window === "undefined") return; // ✅ Prevent SSR crash
+
     const handleScroll = () => {
       setScrolled(window.scrollY > 50);
     };
+
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);

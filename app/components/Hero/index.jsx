@@ -21,10 +21,16 @@ const features = [
 ];
 
 export default function Hero() {
+  const [dimensions, setDimensions] = useState({ width: 0, height: 0 });
   const [index, setIndex] = useState(0);
   const [isVisible, setIsVisible] = useState(true);
-
   useEffect(() => {
+    if (typeof window === "undefined") return;
+    setDimensions({ width: window.innerWidth, height: window.innerHeight });
+  }, []);
+  useEffect(() => {
+    if (typeof window === "undefined") return; // ✅ Prevent SSR errors
+
     const interval = setInterval(() => {
       setIsVisible(false);
       setTimeout(() => {
@@ -36,10 +42,12 @@ export default function Hero() {
   }, []);
 
   const scrollToContent = () => {
-    window.scrollTo({
-      top: window.innerHeight,
-      behavior: "smooth",
-    });
+    if (typeof window !== "undefined") {
+      window.scrollTo({
+        top: window.innerHeight,
+        behavior: "smooth",
+      });
+    }
   };
 
   return (
@@ -77,8 +85,8 @@ export default function Hero() {
             key={i}
             className="absolute bg-accent/10 rounded-full"
             initial={{
-              x: Math.random() * window.innerWidth,
-              y: Math.random() * window.innerHeight,
+              x: Math.random() * dimensions.width,
+              y: Math.random() * dimensions.height,
               scale: 0,
             }}
             animate={{
