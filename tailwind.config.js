@@ -1,24 +1,29 @@
 /** @type {import('tailwindcss').Config} */
-export const content = [
-  "./app/**/*.{js,ts,jsx,tsx}",
-  "./app/components/**/*.{js,ts,jsx,tsx}",
-];
-export const theme = {
-  extend: {
-    fontFamily: {
-      title: ["Montserrat", "sans-serif"],
-      subtitle: ["Poppins", "sans-serif"],
-      body: ["Roboto", "sans-serif"],
-      quote: ["Playfair Display", "serif"],
-    },
-    colors: {
-      primary: "#0a284e",
-      accent: "#d4af37",
-      teal: "#157a6e",
-      mint: "#e6f4f1",
-      lightgray: "#f2f2f2",
-      grayblue: "#b4c5d1",
+module.exports = {
+  content: [
+    "./app/**/*.{js,jsx,ts,tsx}",
+    "./components/**/*.{js,jsx,ts,tsx}",
+    "./pages/**/*.{js,jsx,ts,tsx}",
+  ],
+  theme: {
+    extend: {
+      fontFamily: {
+        title: "var(--font-montserrat)",
+        subtitle: "var(--font-poppins)",
+        body: "var(--font-roboto)",
+        quote: "var(--font-playfair)",
+      },
+      colors: {
+        primary: "#0a284e",
+        accent: "#d4af37",
+        teal: "#157a6e",
+        mint: "#e6f4f1",
+        lightgray: "#f2f2f2",
+        grayblue: "#b4c5d1",
+        background: "var(--background)",
+        foreground: "var(--foreground)",
+      },
     },
   },
+  plugins: [],
 };
-export const plugins = [];

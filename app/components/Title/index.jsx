@@ -1,78 +1,63 @@
-import React from "react";
+"use client";
 import { motion } from "motion/react";
+import { useRef } from "react";
 
-import { montserrat } from "@lib/font";
-
-const Title = ({
+export default function Title({
   title,
-  classes = "",
-  delay = 0.3,
-  duration = 0.8,
-  underline = false,
-  shadow = true,
-  gradient = true,
-}) => {
+  shadow = false,
+  gradient = false,
+  centered = true,
+}) {
+  const titleRef = useRef(null);
+
   return (
     <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{
-        opacity: 1,
-        y: 0,
-        transition: {
-          delay,
-          duration,
-          ease: [0.16, 0.77, 0.47, 0.97], // Custom easing curve
-        },
-      }}
+      ref={titleRef}
+      className={`relative ${centered ? "text-center" : "text-left"} mb-6`}
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-50px" }}
-      className={`relative inline-block ${classes}`}
+      transition={{ duration: 0.8, ease: "easeOut" }}
     >
       <motion.h2
-        className={`text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight ${
-          montserrat.className
-        } ${
-          gradient
-            ? "bg-clip-text text-transparent bg-gradient-to-r from-[var(--color-primary2)] to-[var(--color-primary1)]"
-            : "text-[var(--color-primary1)]"
-        } ${shadow ? "drop-shadow-lg" : ""}`}
+        className={`text-4xl md:text-5xl lg:text-6xl font-bold font-title relative inline-block`}
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.8, delay: 0.1 }}
       >
-        {title}
-        {underline && (
-          <motion.span
-            initial={{ scaleX: 0 }}
-            whileInView={{
-              scaleX: 1,
-              transition: {
-                delay: delay + 0.2,
-                duration: duration * 0.8,
-                ease: "backOut",
-              },
-            }}
-            className="absolute left-0 -bottom-2 w-full h-1 bg-[var(--color-accent)] origin-left"
-          />
-        )}
-      </motion.h2>
+        {/* Main Title with Gradient/Shadow Effects */}
+        <span
+          className={`relative z-10 ${
+            gradient
+              ? "bg-gradient-to-r from-primary to-teal bg-clip-text text-transparent"
+              : "text-primary"
+          } ${shadow ? "drop-shadow-lg" : ""}`}
+        >
+          {title}
+        </span>
 
-      {/* Decorative elements */}
-      {shadow && (
+        {/* Background Text Effect */}
         <motion.span
-          initial={{ opacity: 0, y: 10 }}
-          whileInView={{
-            opacity: 0.2,
-            y: 0,
-            transition: {
-              delay: delay + 0.1,
-              duration: duration * 1.2,
-            },
-          }}
-          className="absolute -z-10 text-5xl sm:text-6xl md:text-7xl font-black tracking-tight text-gray-400/20 -bottom-3 left-0 w-full"
-          aria-hidden="true"
+          initial={{ opacity: 0, scale: 0.8 }}
+          whileInView={{ opacity: 0.03, scale: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 1, delay: 0.5 }}
+          className="absolute inset-0 text-5xl md:text-6xl lg:text-7xl font-black text-primary whitespace-nowrap"
+          style={{ zIndex: 0 }}
         >
           {title}
         </motion.span>
-      )}
+
+        {/* Animated Underline */}
+        <motion.div
+          initial={{ width: 0 }}
+          whileInView={{ width: "100%" }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, delay: 0.6, ease: "easeOut" }}
+          className="h-1 bg-gradient-to-r from-accent to-teal rounded-full mt-4"
+        />
+      </motion.h2>
     </motion.div>
   );
-};
-
-export default Title;
+}

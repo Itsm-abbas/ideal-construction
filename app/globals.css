@@ -1,20 +1,24 @@
-@import 'swiper/css';
-@import 'swiper/css/navigation';
-@import 'swiper/css/pagination';
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ===============================
+   Root Variables & Themes
+================================= */
 :root {
+  --font-poppins: "Poppins", sans-serif;
+  --font-inter: "Montserrat", sans-serif;
+  --font-roboto: "Roboto", sans-serif;
+  --font-playfair: "Lora", serif;
   --background: #ffffff;
   --foreground: #171717;
-}
 
-
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
- 
+  --color-primary1: #0a284e;
+  --color-primary2: #157a6e;
+  --color-accent: #d4af37;
+  --color-mint: #e6f4f1;
+  --color-lightgray: #f2f2f2;
+  --color-grayblue: #b4c5d1;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -24,25 +28,25 @@
   }
 }
 
-
-:root {
-  --color-primary1: #0a284e;
-  --color-primary2: #157a6e;
-  --color-accent: #d4af37;
-  --color-mint: #e6f4f1;
-  --color-lightgray: #f2f2f2;
-  --color-grayblue: #b4c5d1;
-}
-
-
-
-a:hover {
+/* ===============================
+   Links
+================================= */
+/* a:hover,a:active {
   color: var(--color-accent);
   text-decoration: none !important;
-}
-a:active {
-  color: var(--color-accent);
-  text-decoration: none !important;
+} */
+
+/* ===============================
+   Animations
+================================= */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
 }
 
 @keyframes fadeInUp {
@@ -50,17 +54,24 @@ a:active {
     opacity: 0;
     transform: translateY(20px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
   }
 }
 
-.animate-fade-in-up {
-  animation: fadeInUp 0.8s ease-out forwards;
+.animate-fade-in {
+  animation: fadeIn 0.8s ease-out forwards;
   opacity: 0;
 }
 
+.animate-fade-in-up {
+  animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  opacity: 0;
+}
+
+/* Animation delays */
 .animation-delay-100 {
   animation-delay: 100ms;
 }
@@ -81,59 +92,9 @@ a:active {
   animation-delay: 500ms;
 }
 
-.animation-delay-600 {
-  animation-delay: 600ms;
-}
-
-.animation-delay-700 {
-  animation-delay: 700ms;
-}
-
-.animation-delay-800 {
-  animation-delay: 800ms;
-}
-
-.animation-delay-900 {
-  animation-delay: 900ms;
-}
-
-/* Noise effect for the hero section */
+/* ===============================
+   Background Textures
+================================= */
 .bg-noise {
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%' height='100%' filter='url(%23noiseFilter)' opacity='0.20'/%3E%3C/svg%3E");
 }
-/* Animations */
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
-
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* Animation Classes */
-.animate-fade-in {
-  animation: fadeIn 0.8s ease-out forwards;
-  opacity: 0;
-}
-
-.animate-fade-in-up {
-  animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-  opacity: 0;
-}
-
-/* Animation Delays */
-.animation-delay-100 { animation-delay: 100ms; }
-.animation-delay-200 { animation-delay: 200ms; }
-.animation-delay-300 { animation-delay: 300ms; }
-.animation-delay-400 { animation-delay: 400ms; }
-.animation-delay-500 { animation-delay: 500ms; }
-
-
